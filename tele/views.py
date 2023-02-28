@@ -8,7 +8,7 @@ def index(request):
 def loginpage(request):
     return render(request, 'tele/login.html')
 
-def consultantRegsiter(request):
+def consultantRegister(request):
     return render(request, 'tele/consultantRegister.html')
 
 def farmerRegister(request):
