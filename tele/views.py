@@ -8,6 +8,10 @@ def index(request):
 def loginpage(request):
     return render(request, 'tele/login.html')
 
-def register1(request):
-    return render(request, 'tele/register.html')
+def consultantRegsiter(request):
+    return render(request, 'tele/consultantRegister.html')
+
+def farmerRegister(request):
+    return render(request, 'tele/farmerRegister.html')
+
 

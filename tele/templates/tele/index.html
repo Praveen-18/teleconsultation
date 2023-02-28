@@ -83,14 +83,19 @@
       </li>
 
       <li>
-        <a href="login.html" target="_blank">
+        <a href="{% url 'loginpage' %}" >
           <i class="zmdi zmdi-lock"></i> <span>Login</span>
         </a>
       </li>
 
        <li>
-        <a href="register.html" target="_blank">
-          <i class="zmdi zmdi-account-circle"></i> <span>Registration</span>
+        <a href="{% url 'farmerRegister' %}" >
+          <i class="zmdi zmdi-account-circle"></i> <span>Farmer Registration</span>
+        </a>
+      </li>
+       <li>
+        <a href="{% url 'consultantRegsiter' %}" >
+          <i class="zmdi zmdi-account-circle"></i> <span>Consultant Registration</span>
         </a>
       </li>
 
