@@ -40,11 +40,12 @@
 		 		<img src="assets/images/logo-icon.png" alt="logo icon">
 		 	</div>
 		  <div class="card-title text-uppercase text-center py-3">FARMER REGISTRATION</div>
-		    <form>
+		    <form method="post">
+                {% csrf_token %}
 			  <div class="form-group">
 			  <label for="exampleInputName" class="sr-only">Name</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your Name">
+				  <input type="text" name="user_name" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your User Name">
 				  <div class="form-control-position">
 					  <i class="icon-user"></i>
 				  </div>
@@ -54,7 +55,7 @@
               <div class="form-group">
 			  <label for="exampleInputEmailId" class="sr-only">Email ID</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputEmailId" class="form-control input-shadow" placeholder="Enter Your Email ID">
+				  <input type="text" name = "email" id="exampleInputEmailId" class="form-control input-shadow" placeholder="Enter Your Email ID">
 				  <div class="form-control-position">
 					  <i class="icon-envelope-open"></i>
 				  </div>
@@ -64,7 +65,7 @@
               <div class="form-group">
 			  <label for="exampleInputName" class="sr-only">Phone Number</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your Mobile Number">
+				  <input type="text" id="exampleInputName" name = "phone_number" class="form-control input-shadow" placeholder="Enter Your Mobile Number">
 				  <div class="form-control-position">
 					  <i class="icon-phone"></i>
 				  </div>
@@ -74,7 +75,7 @@
                <div class="form-group">
 			  <label for="exampleInputName" class="sr-only">Address</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your Address">
+				  <input type="text" id="exampleInputName" name = "address" class="form-control input-shadow" placeholder="Enter Your Address">
 				  <div class="form-control-position">
 					  <i class="icon-location-pin"></i>
 				  </div>
@@ -85,7 +86,7 @@
 			 <div class="form-group">
 			   <label for="exampleInputPassword" class="sr-only">Password</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputPassword" class="form-control input-shadow" placeholder="Create Password">
+				  <input type="text" id="exampleInputPassword" name = "password" class="form-control input-shadow" placeholder="Create Password">
 				  <div class="form-control-position">
 					  <i class="icon-lock"></i>
 				  </div>
@@ -95,23 +96,27 @@
               <div class="form-group">
 			   <label for="exampleInputPassword" class="sr-only">Password</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputPassword" class="form-control input-shadow" placeholder="Conform Password">
+				  <input type="text" id="exampleInputPassword" name = "repassword" class="form-control input-shadow" placeholder="Conform Password">
 				  <div class="form-control-position">
 					  <i class="icon-lock"></i>
 				  </div>
 			   </div>
 			  </div>
 
-			
+			<button type="submit" class="btn btn-light btn-block waves-effect waves-light">Sign Up</button>
 			 </form>
+
 		   </div>
+
 		  </div>
+
         <div class="card-footer text-center py-3">
               <p class="text-warning mb-0">Create Consultant Account <a href="{% url 'consultantRegister' %}">Sign up as Consultant</a></p>
               <br>
 		    <p class="text-warning mb-0">Already have an account? <a href="{% url 'loginpage' %}"> Sign in here</a></p>
 		  </div>
 	     </div>
+
 
     
      <!--Start Back To Top Button-->

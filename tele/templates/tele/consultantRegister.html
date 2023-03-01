@@ -40,11 +40,32 @@
 		 		<img src="assets/images/logo-icon.png" alt="logo icon">
 		 	</div>
 		  <div class="card-title text-uppercase text-center py-3">CONSULTANT REGISTRATION</div>
-		    <form>
+		    <form method="post">
+                {% csrf_token %}
 			  <div class="form-group">
 			  <label for="exampleInputName" class="sr-only">Name</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your Name">
+				  <input type="text" name = "user_name" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your Name">
+				  <div class="form-control-position">
+					  <i class="icon-user"></i>
+				  </div>
+			   </div>
+
+
+			  </div>
+                <div class="form-group">
+			  <label for="exampleInputEmailId" class="sr-only">Email ID</label>
+			   <div class="position-relative has-icon-right">
+				  <input type="text" name = "gender" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your gender">
+				  <div class="form-control-position">
+					  <i class="icon-user"></i>
+				  </div>
+			   </div>
+			  </div>
+                <div class="form-group">
+			  <label for="exampleInputEmailId" class="sr-only">Email ID</label>
+			   <div class="position-relative has-icon-right">
+				  <input type="text" name = "age" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your age">
 				  <div class="form-control-position">
 					  <i class="icon-user"></i>
 				  </div>
@@ -53,7 +74,7 @@
 			  <div class="form-group">
 			  <label for="exampleInputEmailId" class="sr-only">Email ID</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputEmailId" class="form-control input-shadow" placeholder="Enter Your Email ID">
+				  <input type="text" id="exampleInputEmailId" name = "email" class="form-control input-shadow" placeholder="Enter Your Email ID">
 				  <div class="form-control-position">
 					  <i class="icon-envelope-open"></i>
 				  </div>
@@ -63,7 +84,7 @@
               <div class="form-group">
 			  <label for="exampleInputName" class="sr-only">Phone Number</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your Mobile Number">
+				  <input type="text" id="exampleInputName" name = "phone_number" class="form-control input-shadow" placeholder="Enter Your Mobile Number">
 				  <div class="form-control-position">
 					  <i class="icon-phone"></i>
 				  </div>
@@ -73,7 +94,7 @@
                <div class="form-group">
 			  <label for="exampleInputName" class="sr-only">Address</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your Address">
+				  <input type="text" id="exampleInputName" name = "address" class="form-control input-shadow" placeholder="Enter Your Address">
 				  <div class="form-control-position">
 					  <i class="icon-location-pin"></i>
 				  </div>
@@ -83,7 +104,7 @@
               <div class="form-group">
 			  <label for="exampleInputName" class="sr-only">Qualification</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your Qualification">
+				  <input type="text" id="exampleInputName" name = "qualification" class="form-control input-shadow" placeholder="Enter Your Qualification">
 				  <div class="form-control-position">
 					  <i class="icon-location-pin"></i>
 				  </div>
@@ -93,7 +114,7 @@
               <div class="form-group">
 			  <label for="exampleInputName" class="sr-only">Specialization</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your Specialization">
+				  <input type="text" id="exampleInputName" name = "speciality" class="form-control input-shadow" placeholder="Enter Your Specialization">
 				  <div class="form-control-position">
 					  <i class="icon-location-pin"></i>
 				  </div>
@@ -103,7 +124,7 @@
 			  <div class="form-group">
 			   <label for="exampleInputPassword" class="sr-only">Password</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputPassword" class="form-control input-shadow" placeholder="Create Password">
+				  <input type="text" id="exampleInputPassword" name = "password" class="form-control input-shadow" placeholder="Create Password">
 				  <div class="form-control-position">
 					  <i class="icon-lock"></i>
 				  </div>
@@ -113,7 +134,7 @@
               <div class="form-group">
 			   <label for="exampleInputPassword" class="sr-only">Password</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputPassword" class="form-control input-shadow" placeholder="Conform Password">
+				  <input type="text" id="exampleInputPassword" name = "repassword" class="form-control input-shadow" placeholder="Conform Password">
 				  <div class="form-control-position">
 					  <i class="icon-lock"></i>
 				  </div>
@@ -121,7 +142,7 @@
 			  </div>
 
 			  
-			 <button type="button" class="btn btn-light btn-block waves-effect waves-light">Sign Up</button>
+			 <button type="submit" class="btn btn-light btn-block waves-effect waves-light">Sign Up</button>
 			 </form>
 		   </div>
 		  </div>

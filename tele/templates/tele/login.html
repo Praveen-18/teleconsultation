@@ -41,11 +41,12 @@
 		 		<img src="{%  static 'tele/images/logo-icon.png' %}" alt="logo icon">
 		 	</div>
 		  <div class="card-title text-uppercase text-center py-3">Sign In</div>
-		    <form>
+		    <form method="post">
+                {% csrf_token %}
 			  <div class="form-group">
 			  <label for="exampleInputUsername" class="sr-only">Username</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputUsername" class="form-control input-shadow" placeholder="Username">
+				  <input type="text" id="exampleInputUsername" name = "user_name" class="form-control input-shadow" placeholder="Username">
 				  <div class="form-control-position">
 					  <i class="icon-user"></i>
 				  </div>
@@ -54,7 +55,7 @@
 			  <div class="form-group">
 			  <label for="exampleInputPassword" class="sr-only">Password</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="password" id="exampleInputPassword" class="form-control input-shadow" placeholder="Password">
+				  <input type="password" id="exampleInputPassword" name = "password" class="form-control input-shadow" placeholder="Password">
 				  <div class="form-control-position">
 					  <i class="icon-lock"></i>
 				  </div>
@@ -71,7 +72,7 @@
 {#			  <a href="reset-password.html">Reset Password</a>#}
 {#			 </div>#}
 {#			</div>#}
-			 <button type="button" class="btn btn-light btn-block">Sign In</button>
+			 <button type="submit" class="btn btn-light btn-block">Sign In</button>
 			  <div class="text-center mt-3">CREATE YOUR ACCOUNT</div>
 
 			 <div class="form-row mt-4">
