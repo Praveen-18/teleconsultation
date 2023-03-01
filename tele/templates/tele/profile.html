@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,22 +9,22 @@
   <meta name="author" content=""/>
   <title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by Codervent</title>
   <!-- loader-->
-  <link href="assets/css/pace.min.css" rel="stylesheet"/>
-  <script src="assets/js/pace.min.js"></script>
+  <link href="{% static 'tele/css/pace.min.css' %}" rel="stylesheet"/>
+  <script src="{% static 'tele/js/pace.min.js' %}"></script>
   <!--favicon-->
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="{% static 'tele/images/favicon.ico' %}" type="image/x-icon">
   <!-- simplebar CSS-->
-  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
+  <link href="{% static 'tele/plugins/simplebar/css/simplebar.css' %}" rel="stylesheet"/>
   <!-- Bootstrap core CSS-->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="{% static 'tele/css/bootstrap.min.css' %}" rel="stylesheet"/>
   <!-- animate CSS-->
-  <link href="assets/css/animate.css" rel="stylesheet" type="text/css"/>
+  <link href="{% static 'tele/css/animate.css' %}" rel="stylesheet" type="text/css"/>
   <!-- Icons CSS-->
-  <link href="assets/css/icons.css" rel="stylesheet" type="text/css"/>
+  <link href="{% static 'tele/css/icons.css' %}" rel="stylesheet" type="text/css"/>
   <!-- Sidebar CSS-->
-  <link href="assets/css/sidebar-menu.css" rel="stylesheet"/>
+  <link href="{% static 'tele/css/sidebar-menu.css' %}" rel="stylesheet"/>
   <!-- Custom Style-->
-  <link href="assets/css/app-style.css" rel="stylesheet"/>
+  <link href="{% static 'tele/css/app-style.css' %}" rel="stylesheet"/>
   
 </head>
 
@@ -184,7 +185,7 @@
             </div>
             <div class="card-body pt-5">
                 <img src="https://via.placeholder.com/110x110" alt="profile-image" class="profile">
-                <h5 class="card-title">Mark Stern</h5>
+                <h5 class="card-title">{{ curr_userobj.user_name }}</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <div class="icon-block">
                   <a href="javascript:void();"><i class="fa fa-facebook bg-facebook text-white"></i></a>
@@ -516,17 +517,17 @@
 
 
   <!-- Bootstrap core JavaScript-->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="{% static 'tele/js/jquery.min.js' %}"></script>
+  <script src="{% static 'tele/js/popper.min.js' %}"></script>
+  <script src="{% static 'tele/js/bootstrap.min.js' %}"></script>
 	
   <!-- simplebar js -->
-  <script src="assets/plugins/simplebar/js/simplebar.js"></script>
+  <script src="{% static 'tele/plugins/simplebar/js/simplebar.js' %}"></script>
   <!-- sidebar-menu js -->
-  <script src="assets/js/sidebar-menu.js"></script>
+  <script src="{% static 'tele/js/sidebar-menu.js' %}"></script>
   
   <!-- Custom scripts -->
-  <script src="assets/js/app-script.js"></script>
+  <script src="{% static 'tele/js/app-script.js' %}"></script>
 	
 </body>
 </html>

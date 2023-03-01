@@ -1,5 +1,6 @@
 from django.shortcuts import render , redirect
 from .models import farmerDetails , consultantDetails
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User , auth
 # Create your views here.
 
@@ -10,9 +11,12 @@ def loginpage(request):
     if request.method == 'POST':
         user_name = request.POST.get('user_name')
         pasword = request.POST.get('password')
+        user = authenticate(request, username=user_name, password=pasword)
         if farmerDetails.objects.filter(user_name=user_name).exists() and farmerDetails.objects.filter(password=pasword).exists():
+            login(request, user)
             return render(request, 'tele/farmerIndex.html')
         elif consultantDetails.objects.filter(user_name=user_name).exists() and consultantDetails.objects.filter(password=pasword).exists():
+            login(request, user)
             return render(request, 'tele/consultantIndex.html')
         return render(request, 'tele/login.html')
     return render(request, 'tele/login.html')
@@ -54,5 +58,15 @@ def farmerRegister(request):
 def farmerIndex(request):
     return render(request, 'tele/farmerIndex.html')
 
+def user_logout(request):
+    if request.user.is_authenticated:
+        logout(request)
+    return redirect('/loginpage')
+
 def consultantIndex(request):
     return render(request, 'tele/consultantIndex.html')
+
+def profile(request):
+    curr_userobj = farmerDetails.objects.get(user_name=request.user.username)
+    return render(request, 'tele/profile.html' , {'curr_userobj':curr_userobj})
+
