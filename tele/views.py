@@ -13,12 +13,15 @@ def loginpage(request):
         pasword = request.POST.get('password')
         user = authenticate(request, username=user_name, password=pasword)
         if farmerDetails.objects.filter(user_name=user_name).exists() and farmerDetails.objects.filter(password=pasword).exists():
-            login(request, user)
-            return render(request, 'tele/farmerIndex.html')
+            curr_user= authenticate(username=user_name,password=pasword)
+            if curr_user is not None:
+                login(request,curr_user)
+                return redirect('/farmerIndex')
         elif consultantDetails.objects.filter(user_name=user_name).exists() and consultantDetails.objects.filter(password=pasword).exists():
-            login(request, user)
-            return render(request, 'tele/consultantIndex.html')
-        return render(request, 'tele/login.html')
+            curr_user = authenticate(username=user_name, password=pasword)
+            if curr_user is not None:
+                login(request, curr_user)
+            return redirect('/consultantIndex')
     return render(request, 'tele/login.html')
 
 def consultantRegister(request):
@@ -37,6 +40,8 @@ def consultantRegister(request):
             return redirect('/loginpage')
         currUser = consultantDetails(user_name = user_name , age = age , gender = gender , email = email , phone_number = phone_number , address = address , qualification = qualification ,speciality = speciality , password = password)
         currUser.save()
+        user=User.objects.create_user(user_name,email,password)
+        user.save()
         return render(request, 'tele/index.html')
     return render(request, 'tele/consultantRegister.html')
 
@@ -52,6 +57,8 @@ def farmerRegister(request):
             return redirect('/loginpage')
         currUser = farmerDetails(user_name = user_name , email = email , phone_number = phone_number , address = address , password = password)
         currUser.save()
+        user = User.objects.create_user(user_name, email, password)
+        user.save()
         return render(request, 'tele/index.html')
     return render(request, 'tele/farmerRegister.html')
 
@@ -67,6 +74,9 @@ def consultantIndex(request):
     return render(request, 'tele/consultantIndex.html')
 
 def profile(request):
-    curr_userobj = farmerDetails.objects.get(user_name=request.user.username)
-    return render(request, 'tele/profile.html' , {'curr_userobj':curr_userobj})
+    curr_userobj = farmerDetails.objects.all()
+    return render(request, 'tele/profile.html' , {'user':request.user , 'curr_userobj':curr_userobj})
+
+def base(request):
+    return render(request, 'tele/base.html')
 
