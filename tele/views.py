@@ -24,6 +24,7 @@ def loginpage(request):
             return redirect('/consultantIndex')
     return render(request, 'tele/login.html')
 
+
 def consultantRegister(request):
     if request.method == 'POST':
         user_name = request.POST.get('user_name')
