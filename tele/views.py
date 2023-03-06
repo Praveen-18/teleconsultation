@@ -12,6 +12,7 @@ def loginpage(request):
         user_name = request.POST.get('user_name')
         pasword = request.POST.get('password')
         user = authenticate(request, username=user_name, password=pasword)
+        print(user_name,pasword)
         if farmerDetails.objects.filter(user_name=user_name).exists() and farmerDetails.objects.filter(password=pasword).exists():
             curr_user= authenticate(username=user_name,password=pasword)
             if curr_user is not None:
@@ -36,7 +37,8 @@ def consultantRegister(request):
         qualification = request.POST.get('qualification')
         speciality = request.POST.get('speciality')
         password = request.POST.get('password')
-        repassword = request.POST.get('repassword')
+        # repassword = request.POST.get('repassword')
+        print(user_name)
         if farmerDetails.objects.filter(user_name=user_name).exists() or consultantDetails.objects.filter(user_name=user_name).exists():
             return redirect('/loginpage')
         currUser = consultantDetails(user_name = user_name , age = age , gender = gender , email = email , phone_number = phone_number , address = address , qualification = qualification ,speciality = speciality , password = password)
@@ -54,6 +56,7 @@ def farmerRegister(request):
         address = request.POST.get('address')
         password = request.POST.get('password')
         repassword = request.POST.get('repassword')
+        print(user_name,email,phone_number,address,password)
         if farmerDetails.objects.filter(user_name=user_name).exists() or consultantDetails.objects.filter(user_name=user_name).exists():
             return redirect('/loginpage')
         currUser = farmerDetails(user_name = user_name , email = email , phone_number = phone_number , address = address , password = password)
