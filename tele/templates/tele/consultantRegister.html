@@ -1,212 +1,92 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <meta name="description" content=""/>
-  <meta name="author" content=""/>
-  <title>ConsultantReg</title>
-  <!-- loader-->
-  <link href="{% static 'tele/css/pace.min.css' %}" rel="stylesheet"/>
-  <script src="{% static 'tele/js/pace.min.js' %}"></script>
-  <!--favicon-->
-  <link rel="icon" href="{% static 'tele/images/favicon.ico' %}" type="image/x-icon">
-  <!-- Bootstrap core CSS-->
-  <link href="{% static 'tele/css/bootstrap.min.css' %}" rel="stylesheet"/>
-  <!-- animate CSS-->
-  <link href="{% static 'tele/css/animate.css' %}" rel="stylesheet" type="text/css"/>
-  <!-- Icons CSS-->
-  <link href="{% static 'tele/css/icons.css' %}" rel="stylesheet" type="text/css"/>
-  <!-- Custom Style-->
-  <link href="{% static 'tele/css/app-style.css' %}" rel="stylesheet"/>
-  
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Skydash Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{% static 'tele/vendors/feather/feather.css' %}">
+  <link rel="stylesheet" href="{% static 'tele/vendors/ti-icons/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'tele/vendors/css/vendor.bundle.base.css' %}">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{% static 'tele/css/vertical-layout-light/style.css' %}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{% static 'tele/images/favicon.png' %}" />
 </head>
 
-<body class="bg-theme bg-theme1">
-
-<!-- start loader -->
-   <div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner" ><div class="loader"></div></div></div></div>
-   <!-- end loader -->
-
-<!-- Start wrapper-->
- <div id="wrapper">
-
-	<div class="card card-authentication1 mx-auto my-4">
-		<div class="card-body">
-		 <div class="card-content p-2">
-		 	<div class="text-center">
-		 		<img src="{% static 'tele/images/logo-icon.png' %}" alt="logo icon">
-		 	</div>
-		  <div class="card-title text-uppercase text-center py-3">CONSULTANT REGISTRATION</div>
-		    <form method="post">
-                {% csrf_token %}
-			  <div class="form-group">
-			  <label for="exampleInputName" class="sr-only">Name</label>
-			   <div class="position-relative has-icon-right">
-				  <input type="text" name = "user_name" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your Name">
-				  <div class="form-control-position">
-					  <i class="icon-user"></i>
-				  </div>
-			   </div>
-
-
-			  </div>
+<body>
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row w-100 mx-0">
+          <div class="col-lg-4 mx-auto">
+            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+              <div class="brand-logo">
+                <img src="../../images/logo.svg" alt="logo">
+              </div>
+              <h4>New here?</h4>
+              <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
+              <form class="pt-3">
                 <div class="form-group">
-			  <label for="exampleInputEmailId" class="sr-only">Email ID</label>
-			   <div class="position-relative has-icon-right">
-				  <input type="text" name = "gender" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your gender">
-				  <div class="form-control-position">
-					  <i class="icon-user"></i>
-				  </div>
-			   </div>
-			  </div>
+                  <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username">
+                </div>
                 <div class="form-group">
-			  <label for="exampleInputEmailId" class="sr-only">Email ID</label>
-			   <div class="position-relative has-icon-right">
-				  <input type="text" name = "age" id="exampleInputName" class="form-control input-shadow" placeholder="Enter Your age">
-				  <div class="form-control-position">
-					  <i class="icon-user"></i>
-				  </div>
-			   </div>
-			  </div>
-			  <div class="form-group">
-			  <label for="exampleInputEmailId" class="sr-only">Email ID</label>
-			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputEmailId" name = "email" class="form-control input-shadow" placeholder="Enter Your Email ID">
-				  <div class="form-control-position">
-					  <i class="icon-envelope-open"></i>
-				  </div>
-			   </div>
-			  </div>
-
-              <div class="form-group">
-			  <label for="exampleInputName" class="sr-only">Phone Number</label>
-			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputName" name = "phone_number" class="form-control input-shadow" placeholder="Enter Your Mobile Number">
-				  <div class="form-control-position">
-					  <i class="icon-phone"></i>
-				  </div>
-			   </div>
-			  </div>
-
-               <div class="form-group">
-			  <label for="exampleInputName" class="sr-only">Address</label>
-			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputName" name = "address" class="form-control input-shadow" placeholder="Enter Your Address">
-				  <div class="form-control-position">
-					  <i class="icon-location-pin"></i>
-				  </div>
-			   </div>
-			  </div>
-
-              <div class="form-group">
-			  <label for="exampleInputName" class="sr-only">Qualification</label>
-			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputName" name = "qualification" class="form-control input-shadow" placeholder="Enter Your Qualification">
-				  <div class="form-control-position">
-					  <i class="icon-location-pin"></i>
-				  </div>
-			   </div>
-			  </div>
-
-              <div class="form-group">
-			  <label for="exampleInputName" class="sr-only">Specialization</label>
-			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputName" name = "speciality" class="form-control input-shadow" placeholder="Enter Your Specialization">
-				  <div class="form-control-position">
-					  <i class="icon-location-pin"></i>
-				  </div>
-			   </div>
-			  </div>
-
-			  <div class="form-group">
-			   <label for="exampleInputPassword" class="sr-only">Password</label>
-			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputPassword" name = "password" class="form-control input-shadow" placeholder="Create Password">
-				  <div class="form-control-position">
-					  <i class="icon-lock"></i>
-				  </div>
-			   </div>
-			  </div>
-
-              <div class="form-group">
-			   <label for="exampleInputPassword" class="sr-only">Password</label>
-			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputPassword" name = "repassword" class="form-control input-shadow" placeholder="Conform Password">
-				  <div class="form-control-position">
-					  <i class="icon-lock"></i>
-				  </div>
-			   </div>
-			  </div>
-
-			  
-			 <button type="submit" class="btn btn-light btn-block waves-effect waves-light">Sign Up</button>
-			 </form>
-		   </div>
-		  </div>
-		  <div class="card-footer text-center py-3">
-              <p class="text-warning mb-0">Create Your Farmer Account <a href="{% url 'farmerRegister' %}"> Sign up as Farmer</a></p>
-              <br>
-		    <p class="text-warning mb-0">Already have an account? <a href="{% url 'loginpage' %}"> Sign in here</a></p>
-		  </div>
-	     </div>
-    
-     <!--Start Back To Top Button-->
-    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
-    <!--End Back To Top Button-->
-	
-	<!--start color switcher-->
-   <div class="right-sidebar">
-    <div class="switcher-icon">
-      <i class="zmdi zmdi-settings zmdi-hc-spin"></i>
+                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <select class="form-control form-control-lg" id="exampleFormControlSelect2">
+                    <option>Country</option>
+                    <option>United States of America</option>
+                    <option>United Kingdom</option>
+                    <option>India</option>
+                    <option>Germany</option>
+                    <option>Argentina</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="mb-4">
+                  <div class="form-check">
+                    <label class="form-check-label text-muted">
+                      <input type="checkbox" class="form-check-input">
+                      I agree to all Terms & Conditions
+                    </label>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN UP</a>
+                </div>
+                <div class="text-center mt-4 font-weight-light">
+                  Already have an account? <a href="login.html" class="text-primary">Login</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
     </div>
-    <div class="right-sidebar-content">
-
-      <p class="mb-0">Gaussion Texture</p>
-      <hr>
-      
-      <ul class="switcher">
-        <li id="theme1"></li>
-        <li id="theme2"></li>
-        <li id="theme3"></li>
-        <li id="theme4"></li>
-        <li id="theme5"></li>
-        <li id="theme6"></li>
-      </ul>
-
-      <p class="mb-0">Gradient Background</p>
-      <hr>
-      
-      <ul class="switcher">
-        <li id="theme7"></li>
-        <li id="theme8"></li>
-        <li id="theme9"></li>
-        <li id="theme10"></li>
-        <li id="theme11"></li>
-        <li id="theme12"></li>
-		<li id="theme13"></li>
-        <li id="theme14"></li>
-        <li id="theme15"></li>
-      </ul>
-      
-     </div>
-   </div>
-  <!--end color switcher-->
-	
-	</div><!--wrapper-->
-	
-  <!-- Bootstrap core JavaScript-->
-  <script src="{% static 'tele/js/jquery.min.js' %}"></script>
-  <script src="{% static 'tele/js/popper.min.js' %}"></script>
-  <script src="{% static 'tele/js/bootstrap.min.js' %}"></script>
-	
-  <!-- sidebar-menu js -->
-  <script src="{% static 'tele/js/sidebar-menu.js' %}"></script>
-  
-  <!-- Custom scripts -->
-  <script src="{% static 'tele/js/app-script.js' %}"></script>
-  
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="{% static 'tele/vendors/js/vendor.bundle.base.js' %}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="{% static 'tele/js/off-canvas.js' %}"></script>
+  <script src="{% static 'tele/js/hoverable-collapse.js' %}"></script>
+  <script src="{% static 'tele/js/template.js' %}"></script>
+  <script src="{% static 'tele/js/settings.js' %}"></script>
+  <script src="{% static 'tele/js/todolist.js' %}"></script>
+  <!-- endinject -->
 </body>
+
 </html>
