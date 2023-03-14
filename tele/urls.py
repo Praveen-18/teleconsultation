@@ -12,4 +12,5 @@ urlpatterns = [
     path('consultantIndex', views.consultantIndex, name='consultantIndex'),
     path('profile', views.profile, name='profile'),
     path('base', views.base, name='base'),
+
 ]
